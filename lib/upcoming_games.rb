@@ -1,5 +1,7 @@
-require "upcoming_games/version"
+require 'open_uri'
+require 'nokogiri'
+require 'pry'
 
-module UpcomingGames
-  # Your code goes here...
-end
+
+require_relative "./upcoming_games/version"
+require_relative "./upcoming_games/cli"
