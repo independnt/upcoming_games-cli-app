@@ -24,15 +24,7 @@ class UpcomingGames::CLI
   def menu
     puts "Please select the game you want to know more about by number, or type exit to leave!"
     input = gets.strip.to_i
-    UpcomingGames::Games.all.each.with_index do |g, index|
-      if input == index + 1
-        puts "#{g.name}"
-        puts "Release date: #{g.release_date}"
-        puts "Platform(s): #{g.platform}"
-        puts "Genre: #{g.genre}"
-        puts "Description #{g.description}"
-      end
-    end
+    UpcomingGames::Games.display_game_info(input)
     puts "do you want to look at more? Y/N"
       response = gets.strip.upcase
       if response == "Y"

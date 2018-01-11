@@ -5,7 +5,7 @@ class UpcomingGames::Games
   attr_accessor :name, :release_date, :genre, :platform, :description
 
   def self.upcoming
-    @@all.each.with_index(1) do |d, index|
+    all.each.with_index(1) do |d, index|
       puts "#{index}. #{d.name}"
     end
   end
@@ -29,6 +29,18 @@ end
 
   def self.all
     @@all
+  end
+
+  def self.display_game_info(input)
+    self.all.each.with_index do |g, index|
+      if input == index + 1
+        puts "#{g.name}"
+        puts "Release date: #{g.release_date}"
+        puts "Platform(s): #{g.platform}"
+        puts "Genre: #{g.genre}"
+        puts "Description #{g.description}"
+      end
+    end
   end
 
 end
