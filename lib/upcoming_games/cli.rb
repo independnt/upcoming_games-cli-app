@@ -37,9 +37,9 @@ class UpcomingGames::CLI
 
     display_game(game)
 
-    puts "Would you like to look at more games? Enter Y/N"
-    input = gets.strip.upcase
-      if input =="Y"
+    puts "Would you like to look at more games? Enter yes or no"
+    input = gets.strip.downcase
+      if input =="yes"
         greeting
         menu
       else
