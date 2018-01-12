@@ -44,7 +44,6 @@ class UpcomingGames::CLI
       if input == index + 1
         puts "#{g.name}"
         puts "Release date: #{g.release_date}"
-        puts "Platform(s): #{g.platform}"
         puts "Genre: #{g.genre}"
         puts "Description #{g.description}"
       end
