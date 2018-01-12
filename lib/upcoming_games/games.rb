@@ -47,7 +47,7 @@ private
     end
 
     def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
+      @doc ||= Nokogiri::HTML(open(self.url))
     end
 
 end
