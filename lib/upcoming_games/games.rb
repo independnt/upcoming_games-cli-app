@@ -4,6 +4,14 @@ class UpcomingGames::Games
 
   attr_accessor :name, :release_date, :genre, :description, :url, :doc
 
+  def initialize(name, release_date, genre, url)
+    @name = name
+    @release_date = release_date
+    @genre = genre
+    @url = url
+  end
+
+
   def self.upcoming
     all.each.with_index(1) do |d, index|
       puts "#{index}. #{d.name}"
@@ -29,21 +37,17 @@ end
     @@all
   end
 
-  def self.scrape_page
-    doc = Nokogiri::HTML(open("http://www.ign.com/upcoming/games?platformSlug=ps4&sortBy=releaseDate&sortOrder=asc&time=3m"))
+  def self.new_from_page(g)
     title = doc.css(".item-title h3").css("a").map {|t| t.text.strip} #removes all white space and provides all names for games
     genre = doc.css("span.item-genre").map{|g| g.text.strip} #removes all white space and provides all genres for games
     release_date = doc.css("div.releaseDate.grid_3.omega").map{|r| r.text.strip}
     url = doc.css(".item-title h3 a").map{|u| "http://www.ign.com" + u['href']}
     testing = Nokogiri::HTML(open(url[20]))
     description = testing.css("div.gameInfo p").text.strip.gsub("\r\n", "")
-    binding.pry
   end
 
   def description_scraper
     doc = Nokogiri::HTML(open(self.url))
-
-
   end
 
   def doc
