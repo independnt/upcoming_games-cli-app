@@ -4,8 +4,16 @@ class UpcomingGames::CLI
 
   def call
     UpcomingGames::Games.scrape_upcoming_games
-    greeting
-    menu
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts "Welcome to upcoming Playstation 4 games, want to see some games?"
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    input = gets.strip.downcase
+    if input == "yes"
+      greeting
+      menu
+    else
+      puts "Fine. smell ya later!"
+    end
   end
 
   def greeting
@@ -23,8 +31,7 @@ class UpcomingGames::CLI
     puts ""
     puts "Which game do you want to know more about?"
     puts ""
-    puts "enter the game number, or exit to close the program."
-    puts ""
+    puts "Enter the number of the game for more info!"
     input = gets.strip
     game = UpcomingGames::Games.find(input.to_i)
 
@@ -40,22 +47,16 @@ class UpcomingGames::CLI
       end
     end
 
-  #def display_game_info(input)
-    #UpcomingGames::Games.all.each.with_index(1) do |g, index|
-      #if input == index.to_s
-        #puts "***#{g.name}***"
-        #puts "Release date: #{g.release_date}"
-        #puts "Genre: #{g.genre}"
-        #puts "Description: #{g.description}"
-      #end
-    #end
-  #end
-
   def display_game(game)
-    puts "***#{game.name}***"
+    puts ""
+    puts "*************#{game.name}***************"
+    puts ""
     puts "Release date: #{game.release_date}"
     puts "Genre: #{game.genre}"
-    puts "Description: #{game.description}"
+    puts ""
+    puts "--------------Description----------------"
+    puts "#{game.description}"
+    puts ""
   end
 
 end
