@@ -1,8 +1,6 @@
 # UpcomingGames
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upcoming_games`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem provides 25 upcoming games for the Playstation 4 as provided by IGN.com.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+if you want to see upcoming games, simply run the gem and respond "yes" to the prompt. You'll be given a list of 25 upcoming games. Select the number of the game you wish to know more about and you'll receive the date of release, genre, and description for the game.
 
 ## Development
 
@@ -37,7 +35,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'indep
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the UpcomingGames project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'independnt'/upcoming_games/blob/master/CODE_OF_CONDUCT.md).
