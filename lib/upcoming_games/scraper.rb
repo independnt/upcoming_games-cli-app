@@ -1,0 +1,5 @@
+class UpcomingGames::Scraper
+
+
+
+end
