@@ -42,7 +42,7 @@ class UpcomingGames::Games
     end
 
     def doc
-    @doc ||= Nokogiri::HTML(open(self))
+    @doc ||= Nokogiri::HTML(open(self.url))
     end
 
 end

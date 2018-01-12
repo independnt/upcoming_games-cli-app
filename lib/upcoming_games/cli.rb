@@ -4,7 +4,7 @@ class UpcomingGames::CLI
 
   def call
     UpcomingGames::Games.scrape_upcoming_games
-    game_list
+    greeting
     menu
   end
 
@@ -17,11 +17,6 @@ class UpcomingGames::CLI
     UpcomingGames::Games.all.each.with_index(1) do |game, index|
       puts "#{index}. #{game.name}"
     end
-  end
-
-  def game_list
-    greeting
-    UpcomingGames::Games.upcoming
   end
 
   def menu
@@ -48,7 +43,7 @@ class UpcomingGames::CLI
         puts "#{g.name}"
         puts "Release date: #{g.release_date}"
         puts "Genre: #{g.genre}"
-        puts "Description #{g.description}"
+        puts "Description: #{g.description}"
       end
     end
   end
