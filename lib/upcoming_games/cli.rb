@@ -3,7 +3,7 @@ require "pry"
 class UpcomingGames::CLI
 
   def call
-    UpcomingGames::Games.info
+    UpcomingGames::Games.scrape_upcoming_games
     game_list
     menu
   end
@@ -14,6 +14,9 @@ class UpcomingGames::CLI
     puts "------------------------------"
     puts "Upcoming Games as of #{today}"
     puts "------------------------------"
+    UpcomingGames::Games.all.each.with_index(1) do |game, index|
+      puts "#{index}. #{game.name}"
+    end
   end
 
   def game_list

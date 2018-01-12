@@ -19,22 +19,10 @@ class UpcomingGames::Games
     g.css("span.item-genre").text.strip,
     g.css(".item-title h3 a").first.attr("href")
     )
-    #title = doc.css(".item-title h3").css("a").map {|t| t.text.strip} #removes all white space and provides all names for games
-    #genre = doc.css("span.item-genre").map{|g| g.text.strip} #removes all white space and provides all genres for games
-    #release_date = doc.css("div.releaseDate.grid_3.omega").map{|r| r.text.strip}
-    #url = doc.css(".item-title h3 a").map{|u| "http://www.ign.com" + u['href']}
-    #testing = Nokogiri::HTML(open(url[20]))
-    #description = testing.css("div.gameInfo p").text.strip.gsub("\r\n", "")
   end
 
   def self.all
     @@all
-  end
-
-  def self.upcoming
-    all.each.with_index(1) do |d, index|
-      puts "#{index}. #{d.name}"
-    end
   end
 
   def description
@@ -62,7 +50,6 @@ class UpcomingGames::Games
       games = doc.css("div.clear.itemList-item")
       games.each do |g|
         UpcomingGames::Games.new_from_page(g)
-        binding.pry
       end
     end
 
