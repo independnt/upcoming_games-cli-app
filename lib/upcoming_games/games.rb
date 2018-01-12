@@ -25,6 +25,10 @@ class UpcomingGames::Games
     @@all
   end
 
+  def self.find(id)
+    self.all[id-1]
+  end
+
   def description
     @description ||= game_description_doc.css("div.gameInfo p").text.strip.gsub("\r\n", "")
   end
