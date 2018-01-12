@@ -43,7 +43,7 @@ class UpcomingGames::CLI
         greeting
         menu
       else
-        puts "Thanks for checking in!"
+        puts "Thanks for checking in! Come back again to see more upcoming games!"
       end
     end
 
