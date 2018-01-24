@@ -3,7 +3,7 @@ require "pry"
 class UpcomingGames::CLI
 
   def call
-    UpcomingGames::Games.scrape_upcoming_games
+    UpcomingGames::Scraper.scrape_upcoming_games
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "Welcome to upcoming Playstation 4 games, want to see some games?"
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
